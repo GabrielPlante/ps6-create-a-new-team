@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
+
 import { AppareilComponent } from './appareil/appareil.component';
 import { FormsModule } from '@angular/forms';
+import { AppareilService } from './services/appareil.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent,
+    
     AppareilComponent
   ],
   imports: [
@@ -18,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AppareilService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
