@@ -16,3 +16,5 @@ http.createServer(function(req, res){
         return res.end();
     })
 }).listen(4222);
+reduce();
+
