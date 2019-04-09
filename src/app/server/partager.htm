@@ -6,18 +6,69 @@
     </h1>
 </head>
 <body>
-    <h2 style="text-align: center; margin-top: 30px">
+    <style>
+        #element{
+            margin: 25px;
+        }
+    </style>
+    <h2 style="text-align: center; margin-top: 30px; margin-bottom: 50px">
         Partager votre expérience
     </h2>
     <div style="border: 3px solid black; padding: 20px; float: left">
-        <h3 style="text-align:center">
+        <h3 style="text-align:center; margin-bottom: 30px">
             Destination
         </h3>
+        <form>
+            <div id="element">
+                Pays*
+                <select name="pays">
+                    <option value="canada">Canada</option>
+                    <option value="irlande">Irlande</option>
+                    <option value="suede">Suede</option>
+                    <option value="thailande">Thailande</option>
+                </select>
+            </div>
+            <div id="element">
+                Date de départ* <input type="date" name="date_depart">
+            </div>
+            <div id="element">
+                Date de fin* <input type="date" name="date_depart">
+            </div>
+            <div id="element">
+                Type de mobilité : 
+                <input type="radio" name="type_mobilite" value="semestre" checked> Semestre
+                <input type="radio" name="type_mobilite" value="stage"> Stage
+            </div>
+            <div id="element">
+                Ville* <input type="text" name="ville">
+            </div>
+        </form>
     </div>
     <div style="border: 3px solid black; padding: 20px; float: right">
-        <h3 style="text-align:center">
+        <h3 style="text-align:center; margin-bottom: 30px">
            Bilan 
         </h3>
+        <form>
+            <div id="element">
+                Satisfaction*
+                <select name="satisfaction">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div id="reussite">
+                Réussite ?
+                <input type="radio" name="reussite" value="oui" checked> Oui 
+                <input type="radio" name="reussite" value="non" checked> Non 
+            </div>
+            <div id="element">
+                Votre ressenti<br>
+                <textarea name="ressenti" rows="5" cols="30"></textarea>
+            </div>
+        </form>
     </div>
 </body>
 </html>
