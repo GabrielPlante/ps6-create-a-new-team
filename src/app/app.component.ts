@@ -1,28 +1,33 @@
-import { Component} from '@angular/core';
-import { AppareilService } from './services/appareil.service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  isAuth = false;
-  
-  lastUpdate = new Date();
+export class AppComponent implements OnInit {
 
-  appareilOne = 'Machine à laver';
+  secondes: number; 
+  counterSubscription: Subscription;
 
-  appareilTwo = 'Frigo';
-
-  appareilThree = 'Ordinateur';
-
-  constructor() {
-    setTimeout(
+  ngOnInit() {
+    const counter = Observable.interval(1000);
+    counter.subscribe(
+      (value) => {
+        this.secondes = value;
+      },
+      (error) => {
+        console.log('Uh-oh, an error occurred! : ' + error);
+      },
       () => {
-        this.isAuth = true;
-      }, 4000
+        console.log('Observable complete!');
+      }
     );
   }
-  
+  ngOnDestroy() {
+    this.counterSubscription.unsubscribe();
+  }
 }
