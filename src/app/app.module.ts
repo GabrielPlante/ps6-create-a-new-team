@@ -19,6 +19,10 @@ import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserService } from './services/user.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { StagesComponent } from './stages/stages.component';
+import { EditStagesComponent } from './edit-stages/edit-stages.component';
+import { StageService } from './services/stage.service';
+import { StageViewComponent } from './stage-view/stage-view.component';
 
 
 const appRoutes: Routes = [
@@ -30,6 +34,8 @@ const appRoutes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: 'users', component: UserListComponent },
+  { path: 'stages', component: StageViewComponent },
+  { path: 'edit-stages', component: EditStagesComponent },
   { path: 'new-user', component: NewUserComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
@@ -52,7 +58,13 @@ const appRoutes: Routes = [
 
     UserListComponent,
 
-    NewUserComponent
+    NewUserComponent,
+
+    StagesComponent,
+
+    EditStagesComponent,
+
+    StageViewComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +76,8 @@ const appRoutes: Routes = [
     AppareilService,
     AuthService,
     AuthGuard,
-    UserService
+    UserService,
+    StageService
   ],
   bootstrap: [AppComponent]
 })

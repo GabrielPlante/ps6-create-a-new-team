@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>
+        Mobilité Polytech
+    </h1>
+</head>
+<body>
+    <style>
+        #element{
+            margin: 25px;
+        }
+    </style>
+    <h2 style="text-align: center; margin-top: 30px; margin-bottom: 50px">
+        Partager votre expérience
+    </h2>
+    <div style="border: 3px solid black; padding: 20px; float: left">
+        <h3 style="text-align:center; margin-bottom: 30px">
+            Destination
+        </h3>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+              <label for="name">
+                Pays*
+              </label>
+                
+                <select id="name" class="form-control" name="pays" ngModel required>
+                    <option value="canada">Canada</option>
+                    <option value="irlande">Irlande</option>
+                    <option value="suede">Suede</option>
+                    <option value="thailande">Thailande</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="depart">
+                Date de départ*
+              </label>
+                <input type="date" id="depart" class="form-control" name="depart" ngModel required>
+            </div>
+            
+            <div class="form-group">
+              <label for="fin">
+                Date de fin*
+              </label>
+                <input type="date" id="fin" class="form-control" name="fin" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="type_mobilite">
+                Type de mobilité
+              </label>
+              <input type="radio" id= "type_mobilite" name="type_mobilite" value="semestre" ngModel > Semestre
+              <input type="radio" id= "type_mobilite" name="type_mobilite" value="stage" ngModel > Stage
+            </div>
+            <div class="form-group">
+              <label for="ville">
+                Ville*
+              </label>
+                <input type="text" id="ville" class="form-control" name="ville" ngModel required>
+            </div>
+            <div class="form-group">
+              <label for="satisfaction">
+                Satisfaction*
+              </label>
+                
+                <select id="satisfaction" class="form-control" name="satisfaction" ngModel required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="reussite">
+                Réussite ?
+              </label>
+              <input type="radio" name="reussite" value="oui" ngModel> Oui
+              <input type="radio" name="reussite" value="non" ngModel> Non
+            </div>
+            <div class="form-group">
+              <label for="ressenti">
+                Votre ressenti
+              </label>
+                <textarea name="ressenti" rows="5" cols="30" ngModel></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
+        </form>
+    </div>
+    
+</body>
+</html>

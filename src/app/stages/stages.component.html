@@ -1,0 +1,28 @@
+<li [ngClass]="{'list-group-item': true,
+
+                'list-group-item-success': reussite === 'oui',
+
+                'list-group-item-danger': reussite === 'non'}">
+
+  
+
+<h4 [ngStyle]="{color: getColor()}">Pays : {{ pays }} -- Réussi : {{ getReussite() }}</h4>
+
+  <h5>Date de départ</h5>
+  <input type="date" class="form-control" [(ngModel)]="dateDepart">
+  <h5>Date de fin</h5>
+  <input type="date" class="form-control" [(ngModel)]="dateFin">
+  <h5>Type de mobilité</h5>
+  <input type="text" class="form-control" [(ngModel)]="mobilite">
+  <h5>Ville de la mobilité</h5>
+  <input type="text" class="form-control" [(ngModel)]="ville">
+  <h5>Satisfaction</h5>
+  <input type="text" class="form-control" [(ngModel)]="satisfaction">
+  <h5>Ressenti de la mobilité</h5>
+  <input type="text" class="form-control" [(ngModel)]="ressenti">
+
+
+
+
+
+</li>
