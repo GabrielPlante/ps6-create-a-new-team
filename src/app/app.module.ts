@@ -19,6 +19,8 @@ import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserService } from './services/user.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { SemestreComponent } from './semestre/semestre.component';
+import { StageComponent } from './stage/stage.component';
 
 
 const appRoutes: Routes = [
@@ -31,6 +33,7 @@ const appRoutes: Routes = [
   { path: 'not-found', component: FourOhFourComponent },
   { path: 'users', component: UserListComponent },
   { path: 'new-user', component: NewUserComponent },
+  { path: 'semestre', component: SemestreComponent},
   { path: '**', redirectTo: 'not-found' }
 ];
 
@@ -52,7 +55,11 @@ const appRoutes: Routes = [
 
     UserListComponent,
 
-    NewUserComponent
+    NewUserComponent,
+
+    SemestreComponent,
+
+    StageComponent
   ],
   imports: [
     BrowserModule,
