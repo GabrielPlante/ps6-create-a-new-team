@@ -23,6 +23,8 @@ import { StagesComponent } from './stages/stages.component';
 import { EditStagesComponent } from './edit-stages/edit-stages.component';
 import { StageService } from './services/stage.service';
 import { StageViewComponent } from './stage-view/stage-view.component';
+import { SemestreComponent } from './semestre/semestre.component';
+import { StageComponent } from './stage/stage.component';
 
 
 const appRoutes: Routes = [
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
   { path: 'stages', component: StageViewComponent },
   { path: 'edit-stages', component: EditStagesComponent },
   { path: 'new-user', component: NewUserComponent },
+  { path: 'semestre', component: SemestreComponent},
   { path: '**', redirectTo: 'not-found' }
 ];
 
@@ -60,11 +63,17 @@ const appRoutes: Routes = [
 
     NewUserComponent,
 
+<<<<<<< HEAD
     StagesComponent,
 
     EditStagesComponent,
 
     StageViewComponent
+=======
+    SemestreComponent,
+
+    StageComponent
+>>>>>>> 7949b05852593c5cf31269c8cf117c0ffd3e826a
   ],
   imports: [
     BrowserModule,
