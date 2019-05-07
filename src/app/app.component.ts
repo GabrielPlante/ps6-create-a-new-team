@@ -9,11 +9,12 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  isConnected: boolean;
   secondes: number; 
   counterSubscription: Subscription;
 
   ngOnInit() {
+    this.isConnected=true;
     const counter = Observable.interval(1000);
     counter.subscribe(
       (value) => {
@@ -29,5 +30,9 @@ export class AppComponent implements OnInit {
   }
   ngOnDestroy() {
     this.counterSubscription.unsubscribe();
+  }
+
+  changeStatus() {
+    this.isConnected = !this.isConnected;
   }
 }

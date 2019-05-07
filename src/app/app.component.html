@@ -1,26 +1,30 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-collapse">
-          <ul class="nav navbar-nav">
-              <li routerLinkActive="active"><a color:black routerLink="auth">Authentification</a></li>
-              <li routerLinkActive="active"><a routerLink="semestre">Semestre à l'étranger</a></li>
-              <li routerLinkActive="active"><a routerLink="stage">Stage à l'étranger</a></li>
-              <li routerLinkActive="active"><a routerLink="stage">Partager son experience</a></li>
-              <li routerLinkActive="active"><a routerLink="stages">Stages</a></li>
-              <li routerLinkActive="active"><a routerLink="edit-stages">Nouveau stage</a></li> <!--met ton component ici raphaël-->
-          </ul>
-      </div>
-    </div>
-  </nav>
+<div *ngIf="isConnected">
   <div class="margin5">
-    <p>Mobilité Polytech</p>
+      <p>Mobilité Polytech</p>
   </div>
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <router-outlet></router-outlet>
+  <body background="bg.jpg">
+    <nav class="navbar navbar-default" >
+        <div class="container-fluid">
+          <div class="navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li routerLinkActive="active"><a color:black routerLink="auth">Authentification</a></li>
+                  <li routerLinkActive="active"><a routerLink="semestre">Semestre à l'étranger</a></li>
+                  <li routerLinkActive="active"><a routerLink="stage">Stage à l'étranger</a></li>
+                  <li routerLinkActive="active"><a routerLink="stage">Partager son experience</a></li>
+                  <li routerLinkActive="active"><a routerLink="stages">Stages</a></li>
+                  <li routerLinkActive="active"><a routerLink="edit-stages">Nouveau stage</a></li>
+              </ul>
+          </div>
         </div>
-      </div>
-    </div>
-</section>
+      </nav>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+    </section>
+  </body>
+</div>
