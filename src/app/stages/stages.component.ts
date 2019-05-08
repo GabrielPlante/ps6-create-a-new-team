@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppareilService } from '../services/appareil.service';
+import { StageService } from '../services/stage.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-stages',
@@ -17,10 +19,18 @@ export class StagesComponent implements OnInit {
   @Input() reussite: string;
   @Input() index: number;
   @Input() id: number;
+  stages: any[];
+  stagesSubscription: Subscription;
 
-  constructor() { }
+  constructor(private stageService: StageService) { }
 
   ngOnInit() {
+    this.stagesSubscription = this.stageService.stagesSubject.subscribe(
+      (stages: any[]) => {
+        this.stages = stages;
+      }
+    );
+    this.stageService.emitStageSubject();
   }
   getReussite() {
     return this.reussite;

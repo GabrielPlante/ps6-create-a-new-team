@@ -30,5 +30,6 @@ export class StageViewComponent implements OnInit {
     );
     this.stageService.emitStageSubject();
   }
+ 
 
 }
