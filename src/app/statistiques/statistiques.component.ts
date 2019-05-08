@@ -21,17 +21,19 @@ export class StatistiquesComponent implements OnInit {
     );
     this.stageService.emitStageSubject();
   }
-  addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction: string,reussite: string,ressenti: string) {
-    this.stageService.addStage(pays, depart, fin, type_mobilite, ville, satisfaction, reussite, ressenti);
+  addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction: string,reussite: string,ressenti: string, promotion: string) {
+    this.stageService.addStage(pays, depart, fin, type_mobilite, ville, satisfaction, reussite, ressenti, promotion);
   }
-  getReussite() {
+  getReussite(pays: string, promotion: string) {
     var i = 0;
     var reussite = 0;
     this.stages.forEach(stage => {
+      if((pays === 'tous' || pays === stage.pays) && (promotion === 'tous')){
       i += 1;
       if (stage.reussite === 'oui'){
         reussite += 1;
       }
+    }
     });
     return reussite/i;
   }
