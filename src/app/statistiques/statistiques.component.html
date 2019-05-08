@@ -1,36 +1,34 @@
-<p>
-  Nombre de stages:
-  {{stages.length}}
+<div id="choix">
+  <p>Nombre de stages:  
+  {{stages.length}}</p>
   <br>
-  Liste des stages:
-  <br>
-  {{stages[0].pays}}
-  <li *ngFor="let item of stages; let i = index">
-    {{i}} {{item.pays}} {{item.type_mobilite}}
-  </li>
-  <br>
+  <p>Type:</p>
   <input type="radio" [(ngModel)]="type" value="Stage">Stage
   <input type="radio" [(ngModel)]="type" value="Semestre">Semestre
   <br>
   Pays:
-  <br>
-  <select [(ngModel)]="pays">
+  <p><select [(ngModel)]="pays">
     <option value='tous'>Tous</option>
     <option *ngFor="let stage of stages" value="{{stage.pays}}">{{stage.pays}}</option>
-  </select>
+  </select></p>
   <br>
-  Promotion:
-  <br>
+  <p>Promotion:</p>
   <select [(ngModel)]="promotion">
     <option value='tous'>Tous</option>
     <option *ngFor="let stage of stages" value="{{stage.promotion}}">{{stage.promotion}}</option>
   </select>
-  <br>
-  Type:
-</p>
-<p>
-  <br>
-  Taux de réussite moyen:
-  <br>
-  {{getReussite()}}
-</p>
+</div>
+<div id="choix">
+<div id="stats">
+  <p>Taux de réussite moyen:</p>
+  {{getReussite()}} / 1
+</div>
+<div id="stats">
+  <p>Satisfaction moyenne:</p>
+  {{getStatisfaction()}} / 5
+</div>
+<div id="stats">
+  <p>Nombre d'étudiant:</p>
+  {{getNbr()}}
+</div>
+</div>
