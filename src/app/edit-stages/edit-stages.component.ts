@@ -26,8 +26,8 @@ export class EditStagesComponent implements OnInit {
     const satisfaction = form.value['satisfaction'];
     const reussite = form.value['reussite'];
     const ressenti = form.value['ressenti'];
-    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction,reussite,ressenti);
+    const promotion = form.value['promotion'];
+    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction,reussite,ressenti,promotion);
     this.router.navigate(['/stages']);
   }
-
 }

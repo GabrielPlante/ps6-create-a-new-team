@@ -12,8 +12,9 @@ export class StageService {
             type_mobilite: 'Stage',
             ville: 'Arnas',
             satisfaction: '3',
-            reussite: 'Oui',
-            ressenti: 'c t bien'
+            reussite: 'oui',
+            ressenti: 'c t bien',
+            promotion: 'SI3'
         },
         {
             id: 2,
@@ -23,13 +24,14 @@ export class StageService {
             type_mobilite: 'Stage',
             ville: 'Vancouver',
             satisfaction: '4',
-            reussite: 'Non',
-            ressenti: 'beau froid et raté'
+            reussite: 'non',
+            ressenti: 'beau froid et raté',
+            promotion: 'ELEC4'
         },
 
     ];
     
-    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction: string,reussite: string,ressenti: string) {
+    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction: string,reussite: string,ressenti: string, promotion: string) {
       const stageObject = {
         id: 0,
         pays: '',
@@ -39,7 +41,8 @@ export class StageService {
         ville: '',
         satisfaction: '',
         reussite: '',
-        ressenti: ''
+        ressenti: '',
+        promotion: ''
       };
         stageObject.pays = pays;
         stageObject.depart = depart;
@@ -50,6 +53,7 @@ export class StageService {
         stageObject.reussite = reussite;
         stageObject.ressenti = ressenti;
         stageObject.id = this.stages[(this.stages.length - 1)].id + 1;
+        stageObject.promotion = promotion;
         this.stages.push(stageObject);
         this.emitStageSubject();
         console.log(this.stages)
