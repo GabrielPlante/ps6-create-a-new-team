@@ -25,10 +25,10 @@
               </label>
                 
                 <select id="name" class="form-control" name="pays" ngModel required>
-                    <option value="canada">Canada</option>
-                    <option value="irlande">Irlande</option>
-                    <option value="suede">Suede</option>
-                    <option value="thailande">Thailande</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Irlande">Irlande</option>
+                    <option value="Suede">Suede</option>
+                    <option value="Thailande">Thailande</option>
                 </select>
             </div>
             <div class="form-group">
@@ -48,8 +48,8 @@
               <label for="type_mobilite">
                 Type de mobilité
               </label>
-              <input type="radio" id= "type_mobilite" name="type_mobilite" value="semestre" ngModel > Semestre
-              <input type="radio" id= "type_mobilite" name="type_mobilite" value="stage" ngModel > Stage
+              <input type="radio" id= "type_mobilite" name="type_mobilite" value="Semestre" ngModel > Semestre
+              <input type="radio" id= "type_mobilite" name="type_mobilite" value="Stage" ngModel > Stage
             </div>
             <div class="form-group">
               <label for="ville">
@@ -74,8 +74,8 @@
               <label for="reussite">
                 Réussite ?
               </label>
-              <input type="radio" name="reussite" value="oui" ngModel> Oui
-              <input type="radio" name="reussite" value="non" ngModel> Non
+              <input type="radio" name="reussite" value="Oui" ngModel> Oui
+              <input type="radio" name="reussite" value="Non" ngModel> Non
             </div>
             <div class="form-group">
               <label for="ressenti">
@@ -87,7 +87,7 @@
               <label for="promotion">
                 Votre promotion
               </label>
-              <input type="text" name="promotion">
+              <input type="text" name="promotion" ngModel>
             </div>
             <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
         </form>
