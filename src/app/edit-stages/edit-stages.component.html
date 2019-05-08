@@ -87,7 +87,26 @@
               <label for="promotion">
                 Votre promotion
               </label>
-              <input type="text" name="promotion" ngModel>
+              <select name="promotion" ngModel required>
+                <option value="BAT3">BAT3</option>
+                <option value="BAT4">BAT4</option>
+                <option value="BAT5">BAT5</option>
+                <option value="ELEC3">ELEC3</option>
+                <option value="ELEC4">ELEC4</option>
+                <option value="ELEC5">ELEC5</option>
+                <option value="GE3">GE3</option>
+                <option value="GE4">GE4</option>
+                <option value="GE5">GE5</option>
+                <option value="GB3">GB3</option>
+                <option value="GB4">GB4</option>
+                <option value="GB5">GB5</option>
+                <option value="MAM3">MAM3</option>
+                <option value="MAM4">MAM4</option>
+                <option value="MAM5">MAM5</option>
+                <option value="SI3">SI3</option>
+                <option value="SI4">SI4</option>
+                <option value="SI5">SI5</option>
+              </select> 
             </div>
             <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
         </form>
