@@ -1,0 +1,15 @@
+<p>
+  Nombre de stages:
+  {{stages.length}}
+  <br>
+  Liste des stages:
+  <br>
+  {{stages[0].pays}}
+  <li *ngFor="let item of stages; let i = index">
+    {{i}} {{item.pays}}
+  </li>
+  <br>
+  Taux de réussite moyen:
+  <br>
+  {{getReussite()}}
+</p>

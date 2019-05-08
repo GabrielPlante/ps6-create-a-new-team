@@ -15,6 +15,18 @@ export class StageService {
             reussite: 'oui',
             ressenti: 'c t bien'
         },
+        {
+            id: 2,
+            pays: 'Canada',
+            depart: new Date(),
+            fin: new Date,
+            type_mobilite: 'Stage',
+            ville: 'Vancouver',
+            satisfaction: '4',
+            reussite: 'non',
+            ressenti: 'beau froid et raté'
+        },
+
     ];
     
     addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction: string,reussite: string,ressenti: string) {
