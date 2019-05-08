@@ -12,7 +12,7 @@ export class StageService {
             type_mobilite: 'Stage',
             ville: 'Arnas',
             satisfaction: '3',
-            reussite: 'oui',
+            reussite: 'Oui',
             ressenti: 'c t bien'
         },
         {
@@ -23,7 +23,7 @@ export class StageService {
             type_mobilite: 'Stage',
             ville: 'Vancouver',
             satisfaction: '4',
-            reussite: 'non',
+            reussite: 'Non',
             ressenti: 'beau froid et raté'
         },
 
