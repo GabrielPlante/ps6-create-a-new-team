@@ -1,21 +1,3 @@
-<div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Les stages</h2>
+<app-stages></app-stages>  
         
-        <ul class="list-group">
-          <app-stages  *ngFor="let stage of stages; let i = index"
-                         [pays]="stage.pays"
-                         [dateDepart]="stage.depart"
-                         [dateFin]="stage.fin"
-                         [mobilite]="stage.type_mobilite"
-                         [ville]="stage.ville"
-                         [satisfaction]="stage.satisfaction"
-                         [reussite]="stage.reussite"
-                         [ressenti]="stage.ressenti"
-                         [index]="i" 
-                         [id]="stage.id"></app-stages>
-        </ul>
-      </div>
-    </div>
-  </div>
+     

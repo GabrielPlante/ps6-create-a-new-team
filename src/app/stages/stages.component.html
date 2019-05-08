@@ -1,4 +1,4 @@
-<li [ngClass]="{'list-group-item': true,
+<!--<li [ngClass]="{'list-group-item': true,
 
                 'list-group-item-success': reussite === 'oui',
 
@@ -25,4 +25,74 @@
 
 
 
-</li>
+</li>-->
+<div class="container">
+    <div class="row">
+      <div class=" col-sm">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">
+                    Pays
+                </th>
+                <th scope="col">
+                    Date de départ
+                </th>
+                <th>
+                    Date de fin
+                </th> 
+                <th>
+                    Type de mobilité
+                </th> 
+                <th>
+                    Ville
+                </th>
+                <th>
+                    Promotion
+                </th> 
+                <th>
+                    Satisfaction
+                </th>
+                <th>
+                    Réussite
+                </th> 
+                <th>
+                    Ressenti
+                </th>    
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let stage of stages" class="table-success">
+                <td>
+                    {{stage.pays}}
+                </td>
+                <td>
+                    {{stage.depart | date}}
+                </td>
+                <td>
+                    {{stage.fin | date}}
+                </td> 
+                <td>
+                    {{stage.type_mobilite}}
+                </td> 
+                <td>
+                    {{stage.ville}}
+                </td>
+                <td>
+                    {{stage.promotion}}
+                </td> 
+                <td>
+                    {{stage.satisfaction}}
+                </td>
+                <td>
+                    {{stage.reussite}}
+                </td>  
+                <td>
+                    {{stage.ressenti}}
+                </td>   
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
