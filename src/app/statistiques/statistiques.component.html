@@ -6,10 +6,31 @@
   <br>
   {{stages[0].pays}}
   <li *ngFor="let item of stages; let i = index">
-    {{i}} {{item.pays}}
+    {{i}} {{item.pays}} {{item.type_mobilite}}
   </li>
+  <br>
+  <input type="radio" [(ngModel)]="type" value="Stage">Stage
+  <input type="radio" [(ngModel)]="type" value="Semestre">Semestre
+  <br>
+  Pays:
+  <br>
+  <select [(ngModel)]="pays">
+    <option value='tous'>Tous</option>
+    <option *ngFor="let stage of stages" value="{{stage.pays}}">{{stage.pays}}</option>
+  </select>
+  <br>
+  Promotion:
+  <br>
+  <select [(ngModel)]="promotion">
+    <option value='tous'>Tous</option>
+    <option *ngFor="let stage of stages" value="{{stage.promotion}}">{{stage.promotion}}</option>
+  </select>
+  <br>
+  Type:
+</p>
+<p>
   <br>
   Taux de réussite moyen:
   <br>
-  {{getReussite('tous', 'tous')}}
+  {{getReussite()}}
 </p>
