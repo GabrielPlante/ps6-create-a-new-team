@@ -29,13 +29,13 @@
 <div class="container">
     <div class="row">
       <div class=" col-sm">
-        <table class="table">
-            <thead class="thead-dark">
+        <table class="table ">
+            <thead class="rgba-red-light">
               <tr>
-                <th scope="col">
+                <th>
                     Pays
                 </th>
-                <th scope="col">
+                <th>
                     Date de départ
                 </th>
                 <th>
@@ -62,7 +62,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let stage of stages" class="table-success">
+              <tr *ngFor="let stage of stages">
                 <td>
                     {{stage.pays}}
                 </td>
