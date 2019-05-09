@@ -1,15 +1,23 @@
-#choix{
+.box{
     border-color: black;
     border-style: solid;
     margin: 30px;
     border-radius: 5px;
     padding: 20px;
+    padding-top:0px;
     float: left;
 }
-#stats{
-    border-top: 5px;
-    border-bottom: 5px;
+.stats{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-p{
-    margin-right:15px;
+.elem{
+    padding: 20px;
+}
+.desc{
+    float: left;
+    margin-right: 20px;
+}
+.choix{
+    float: right;
 }

@@ -38,7 +38,7 @@ export class StatistiquesComponent implements OnInit {
     this.stages.forEach(stage => {
       if((this.pays === 'tous' || this.pays === stage.pays) && (this.promotion === 'tous' || this.promotion == stage.promotion) && this.type === stage.type_mobilite){
       i += 1;
-      if (stage.reussite === 'oui'){
+      if (stage.reussite === 'Oui'){
         reussite += 1;
       }
     }
