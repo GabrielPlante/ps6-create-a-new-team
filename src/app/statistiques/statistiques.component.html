@@ -1,34 +1,61 @@
-<div id="choix">
-  <p>Nombre de stages:  
-  {{stages.length}}</p>
-  <br>
-  <p>Type:</p>
-  <input type="radio" [(ngModel)]="type" value="Stage">Stage
-  <input type="radio" [(ngModel)]="type" value="Semestre">Semestre
-  <br>
-  Pays:
-  <p><select [(ngModel)]="pays">
-    <option value='tous'>Tous</option>
-    <option *ngFor="let stage of stages" value="{{stage.pays}}">{{stage.pays}}</option>
-  </select></p>
-  <br>
-  <p>Promotion:</p>
-  <select [(ngModel)]="promotion">
-    <option value='tous'>Tous</option>
-    <option *ngFor="let stage of stages" value="{{stage.promotion}}">{{stage.promotion}}</option>
-  </select>
+<div class="box">
+  <div class="elem">
+    <div class="desc">
+      Type:
+    </div>
+    <div class="choix">
+      <input type="radio" [(ngModel)]="type" value="Stage">Stage
+      <input type="radio" [(ngModel)]="type" value="Semestre">Semestre
+    </div>
+  </div>
+  <div class="elem">
+    <div class="desc">
+      Pays:
+    </div>
+    <div class="choix">
+      <select [(ngModel)]="pays">
+        <option value='tous'>Tous</option>
+        <option *ngFor="let stage of stages" value="{{stage.pays}}">{{stage.pays}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="elem">
+    <div class="desc">
+      Promotion:
+    </div>
+    <div class="choix">
+      <select [(ngModel)]="promotion">
+        <option value='tous'>Tous</option>
+        <option *ngFor="let stage of stages" value="{{stage.promotion}}">{{stage.promotion}}</option>
+      </select>
+    </div>
+  </div>
 </div>
-<div id="choix">
-<div id="stats">
-  <p>Taux de réussite moyen:</p>
-  {{getReussite()}} / 1
-</div>
-<div id="stats">
-  <p>Satisfaction moyenne:</p>
-  {{getStatisfaction()}} / 5
-</div>
-<div id="stats">
-  <p>Nombre d'étudiant:</p>
-  {{getNbr()}}
-</div>
+
+
+<div class="box">
+  <div class="elem">
+    <div class="desc">
+      Taux de réussite moyen:
+    </div>
+    <div class="choix">
+      {{getReussite()}} / 1
+    </div>
+  </div>
+  <div class="elem">
+    <div class="desc">
+      Satisfaction moyenne:
+    </div>
+    <div class="choix">
+      {{getStatisfaction()}} / 5
+    </div>
+  </div>
+  <div class="elem">
+    <div class="desc">
+      Nombre de résultat:
+    </div>
+    <div class="choix">
+      {{getNbr()}}
+    </div>
+  </div>
 </div>
