@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <h1>
+    Mobilité Polytech
+  </h1>
+</head>
+
+<body>
+  <h2>
+    Partager votre expérience
+  </h2>
+
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>
+            Destination
+          </h3>
+
+          <div class="form-group">
+            <label for="promotion">
+              Votre promotion : &nbsp; 
+            </label>
+            <select name="promotion" ngModel required>
+              <option value="BAT3">BAT3</option>
+              <option value="BAT4">BAT4</option>
+              <option value="BAT5">BAT5</option>
+              <option value="ELEC3">ELEC3</option>
+              <option value="ELEC4">ELEC4</option>
+              <option value="ELEC5">ELEC5</option>
+              <option value="GE3">GE3</option>
+              <option value="GE4">GE4</option>
+              <option value="GE5">GE5</option>
+              <option value="GB3">GB3</option>
+              <option value="GB4">GB4</option>
+              <option value="GB5">GB5</option>
+              <option value="MAM3">MAM3</option>
+              <option value="MAM4">MAM4</option>
+              <option value="MAM5">MAM5</option>
+              <option value="SI3">SI3</option>
+              <option value="SI4">SI4</option>
+              <option value="SI5">SI5</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="type_mobilite">
+              Type de mobilité : &nbsp;
+            </label>
+            <input type="radio" id="type_mobilite" name="type_mobilite" value="Semestre" ngModel> Semestre
+            <input type="radio" id="type_mobilite" name="type_mobilite" value="Stage" ngModel> Stage
+          </div>
+          <div class="form-group">
+            <label for="name">
+              Pays :*
+            </label>
+
+            <select id="name" class="form-control" name="pays" ngModel required>
+              <option value="Canada">Canada</option>
+              <option value="Irlande">Irlande</option>
+              <option value="Suede">Suede</option>
+              <option value="Thailande">Thailande</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="depart">
+              Date de départ :*
+            </label>
+            <input type="date" id="depart" class="form-control" name="depart" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="fin">
+              Date de fin :*
+            </label>
+            <input type="date" id="fin" class="form-control" name="fin" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="ville">
+              Ville :*
+            </label>
+            <input type="text" id="ville" class="form-control" name="ville" ngModel required>
+          </div>
+          <div class="form-group">
+            <label for="universite">
+              Université :*
+            </label>
+            <input type="text" id="universite" class="form-control" name="universite" ngModel required>
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <h3>
+            Votre Expérience
+          </h3>
+          <div class="form-group">
+            <label for="reussite">Réussite ? :&nbsp;</label>
+            <input type="radio" name="reussite" value="Oui" ngModel> Oui
+            <input type="radio" name="reussite" value="Non" ngModel> Non
+          </div>
+          <div class="form-group">
+            <label for="satisfaction_pays">
+              Satisfaction du Pays et de la Ville :*
+            </label>
+            <select id="satisfaction_pays" class="form-control" name="satisfaction_pays" ngModel required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="satisfaction_enseignement">
+              Satisfaction de l'enseignement :*
+            </label>
+            <select id="satisfaction_enseignement" class="form-control" name="satisfaction_enseignement" ngModel required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="satisfaction_vie">
+              Satisfaction de la vie étudiante / en entreprise :*
+            </label>
+            <select id="satisfaction_vie" class="form-control" name="satisfaction_vie" ngModel required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ressenti">
+              Votre ressenti : &nbsp;
+            </label>
+            <textarea name="ressenti" rows="5" cols="30" ngModel></textarea>
+          </div>
+          <div class="form-group">
+          	<label for="avatar">Joindre un contrat d'études : </label>
+            <br>
+            <input type="file"
+                id="avatar" name="avatar"
+                accept="contrat/pdf">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="bouton">
+        <input class="btn btn-warning" type="reset" value="Annuler"/>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Enregistrer</button>
+      </div>
+      <br><br>
+    </div>
+  </form>
+</body>
+
+</html>

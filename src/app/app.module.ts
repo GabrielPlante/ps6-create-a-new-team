@@ -23,6 +23,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { StagesComponent } from './stages/stages.component';
 import { EditStagesComponent } from './edit-stages/edit-stages.component';
+import { PartagerComponent } from './partager/partager.component';
 import { StageService } from './services/stage.service';
 import { StageViewComponent } from './stage-view/stage-view.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'stages', component: StageViewComponent },
   { path: 'statistiques', component: StatistiquesComponent },
   { path: 'edit-stages', component: EditStagesComponent },
+  { path: 'partager', component: PartagerComponent },
   { path: 'new-user', component: NewUserComponent },
   
   { path: '**', redirectTo: 'not-found' }
@@ -64,6 +66,8 @@ const appRoutes: Routes = [
     UserListComponent,
 
     NewUserComponent,
+
+    PartagerComponent,
 
     StagesComponent,
 
