@@ -14,6 +14,7 @@ export class PartagerComponent implements OnInit {
   constructor(private stageService: StageService,
     private router: Router) { }
 
+    
   ngOnInit() {
   }
   onSubmit(form: NgForm) {
@@ -23,11 +24,15 @@ export class PartagerComponent implements OnInit {
     const fin = form.value['fin'];
     const type_mobilite = form.value['type_mobilite'];
     const ville = form.value['ville'];
-    const satisfaction = form.value['satisfaction'];
+    const satisfaction_pays = form.value['satisfaction_pays'];
+    const satisfaction_enseignement = form.value['satisfaction_enseignement'];
+    const satisfaction_vie = form.value['satisfaction_vie'];
     const reussite = form.value['reussite'];
     const ressenti = form.value['ressenti'];
     const promotion = form.value['promotion'];
-    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction,reussite,ressenti,promotion);
+    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion);
     this.router.navigate(['/stages']);
   }
+
+    
 }

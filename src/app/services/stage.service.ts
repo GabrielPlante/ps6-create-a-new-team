@@ -11,7 +11,9 @@ export class StageService {
             fin: new Date,
             type_mobilite: 'Stage',
             ville: 'Arnas',
-            satisfaction: '3',
+            satisfaction_pays: '3',
+            satisfaction_enseignement: '4',
+            satisfaction_vie: '2',
             reussite: 'Oui',
             ressenti: 'c t bien',
             promotion: 'SI3'
@@ -23,7 +25,9 @@ export class StageService {
             fin: new Date,
             type_mobilite: 'Stage',
             ville: 'Vancouver',
-            satisfaction: '4',
+            satisfaction_pays: '4',
+            satisfaction_enseignement: '4',
+            satisfaction_vie: '3',
             reussite: 'Non',
             ressenti: 'beau froid et raté',
             promotion: 'ELEC4'
@@ -31,7 +35,7 @@ export class StageService {
 
     ];
     
-    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction: string,reussite: string,ressenti: string, promotion: string) {
+    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string,satisfaction_enseignement: string,satisfaction_vie: string,reussite: string,ressenti: string, promotion: string) {
       const stageObject = {
         id: 0,
         pays: '',
@@ -39,7 +43,9 @@ export class StageService {
         fin: new Date,
         type_mobilite: '',
         ville: '',
-        satisfaction: '',
+        satisfaction_pays: '',
+        satisfaction_enseignement: '',
+        satisfaction_vie: '',
         reussite: '',
         ressenti: '',
         promotion: ''
@@ -49,7 +55,9 @@ export class StageService {
         stageObject.fin = fin;
         stageObject.type_mobilite = type_mobilite;
         stageObject.ville = ville;
-        stageObject.satisfaction = satisfaction;
+        stageObject.satisfaction_pays = satisfaction_pays;
+        stageObject.satisfaction_enseignement = satisfaction_enseignement;
+        stageObject.satisfaction_vie = satisfaction_vie;
         stageObject.reussite = reussite;
         stageObject.ressenti = ressenti;
         stageObject.id = this.stages[(this.stages.length - 1)].id + 1;
