@@ -50,8 +50,8 @@
             <label for="type_mobilite">
               Type de mobilité : &nbsp;
             </label>
-            <input type="radio" id="type_mobilite" name="type_mobilite" value="Semestre" ngModel> Semestre
-            <input type="radio" id="type_mobilite" name="type_mobilite" value="Stage" ngModel> Stage
+            <input type="radio" id="type_mobilite" name="type_mobilite" value="Semestre" ng-model="afficher" checked ngModel> Semestre
+            <input type="radio" id="type_mobilite" name="type_mobilite" value="Stage" ng-model="afficher" ngModel> Stage
           </div>
           <div class="form-group">
             <label for="name">
@@ -83,12 +83,13 @@
             </label>
             <input type="text" id="ville" class="form-control" name="ville" ngModel required>
           </div>
-          <div class="form-group">
+          <div class="form-group"  id="label_uni" ng-show="afficher">
             <label for="universite">
-              Université :*
+              Université/Entreprise :*
             </label>
             <input type="text" id="universite" class="form-control" name="universite" ngModel required>
           </div>
+          
 
         </div>
 
@@ -98,7 +99,7 @@
           </h3>
           <div class="form-group">
             <label for="reussite">Réussite ? :&nbsp;</label>
-            <input type="radio" name="reussite" value="Oui" ngModel> Oui
+            <input type="radio" name="reussite" value="Oui" checked ngModel> Oui
             <input type="radio" name="reussite" value="Non" ngModel> Non
           </div>
           <div class="form-group">
@@ -147,7 +148,7 @@
           	<label for="avatar">Joindre un contrat d'études : </label>
             <br>
             <input type="file"
-                id="avatar" name="avatar"
+                id="contrat" name="contrat"
                 accept="contrat/pdf">
           </div>
         </div>
