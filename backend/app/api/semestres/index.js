@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get('/:semestreId', (req, res) => {
+router.get('/:id', (req, res) => {
   try {
-    res.status(200).json(Semestre.getById(req.params.SemestreId));
+    res.status(200).json(Semestre.getById(req.params.id));
   } catch (err) {
     if (err.name === 'NotFoundError') {
       res.status(404).end();
@@ -28,7 +28,7 @@ router.get('/:semestreId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const semestre = Semestre.create(Object.assign({}, { notes: '' }, req.body));
+    const semestre = Semestre.create(Object.assign({}, req.body));
     res.status(201).json(semestre);
   } catch (err) {
     if (err.name === 'ValidationError') {
@@ -39,9 +39,9 @@ router.post('/', (req, res) => {
   }
 });
 
-router.put('/:semestreId', (req, res) => {
+router.put('/:id', (req, res) => {
   try {
-    res.status(200).json(Semestre.update(req.params.SemestreId, req.body));
+    res.status(200).json(Semestre.update(req.params.id, req.body));
   } catch (err) {
     if (err.name === 'NotFoundError') {
       res.status(404).end();
@@ -53,9 +53,9 @@ router.put('/:semestreId', (req, res) => {
   }
 });
 
-router.delete('/:semestreId', (req, res) => {
+router.delete('/:id', (req, res) => {
   try {
-    Semestre.delete(req.params.SemestreId);
+    Semestre.delete(req.params.id);
     res.status(204).end();
   } catch (err) {
     if (err.name === 'NotFoundError') {
@@ -65,7 +65,5 @@ router.delete('/:semestreId', (req, res) => {
     }
   }
 });
-
-//router.use('/:semestreId/tickets', SemestreRouter);
 
 module.exports = router;

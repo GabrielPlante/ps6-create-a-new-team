@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get('/:stageId', (req, res) => {
+router.get('/:id', (req, res) => {
   try {
-    res.status(200).json(Stage.getById(req.params.stageId));
+    res.status(200).json(Stage.getById(req.params.id));
   } catch (err) {
     if (err.name === 'NotFoundError') {
       res.status(404).end();
@@ -28,8 +28,8 @@ router.get('/:stageId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const ticket = Stage.create(Object.assign({}, { notes: '' }, req.body));
-    res.status(201).json(ticket);
+    const stage = Stage.create(Object.assign({}, req.body));
+    res.status(201).json(stage);
   } catch (err) {
     if (err.name === 'ValidationError') {
       res.status(400).json(err.extra);
@@ -39,9 +39,9 @@ router.post('/', (req, res) => {
   }
 });
 
-router.put('/:stageId', (req, res) => {
+router.put('/:id', (req, res) => {
   try {
-    res.status(200).json(Stage.update(req.params.stageId, req.body));
+    res.status(200).json(Stage.update(req.params.id, req.body));
   } catch (err) {
     if (err.name === 'NotFoundError') {
       res.status(404).end();
@@ -53,9 +53,9 @@ router.put('/:stageId', (req, res) => {
   }
 });
 
-router.delete('/:stageId', (req, res) => {
+router.delete('/:id', (req, res) => {
   try {
-    Stage.delete(req.params.stageId);
+    Stage.delete(req.params.id);
     res.status(204).end();
   } catch (err) {
     if (err.name === 'NotFoundError') {
@@ -65,7 +65,5 @@ router.delete('/:stageId', (req, res) => {
     }
   }
 });
-
-//router.use('/:stageId/tickets', StageRouter);
 
 module.exports = router;
