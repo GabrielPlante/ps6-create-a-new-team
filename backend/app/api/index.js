@@ -1,6 +1,6 @@
 const { Router } = require('express');
-const SemestreRouter = require('./semestre');
-const StageRouter = require('./stage');
+const SemestreRouter = require('./semestres');
+const StageRouter = require('./stages');
 
 const router = new Router();
 router.get('/status', (req, res) => res.status(200).json('ok'));

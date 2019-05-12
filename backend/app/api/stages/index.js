@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const { Stage } = require('../../models');
-const StageRouter = require('./stages');
 
 const router = new Router();
 router.get('/', (req, res) => {
@@ -67,6 +66,6 @@ router.delete('/:stageId', (req, res) => {
   }
 });
 
-router.use('/:stageId/tickets', TicketRouter);
+//router.use('/:stageId/tickets', StageRouter);
 
 module.exports = router;

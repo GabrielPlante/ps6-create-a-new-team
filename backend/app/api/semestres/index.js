@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const { Semestre } = require('../../models');
-const SemestreRouter = require('./semestres');
 
 const router = new Router();
 router.get('/', (req, res) => {
@@ -29,8 +28,8 @@ router.get('/:semestreId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const ticket = Semestre.create(Object.assign({}, { notes: '' }, req.body));
-    res.status(201).json(ticket);
+    const semestre = Semestre.create(Object.assign({}, { notes: '' }, req.body));
+    res.status(201).json(semestre);
   } catch (err) {
     if (err.name === 'ValidationError') {
       res.status(400).json(err.extra);
@@ -67,6 +66,6 @@ router.delete('/:semestreId', (req, res) => {
   }
 });
 
-router.use('/:semestreId/tickets', TicketRouter);
+//router.use('/:semestreId/tickets', SemestreRouter);
 
 module.exports = router;
