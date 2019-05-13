@@ -19,6 +19,8 @@ export class PartagerComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     console.log(form.value)
+    const nom = form.value['nom'];
+    const prenom = form.value['prenom'];
     const pays = form.value['pays'];
     const depart = form.value['depart'];
     const fin = form.value['fin'];
@@ -31,7 +33,7 @@ export class PartagerComponent implements OnInit {
     const ressenti = form.value['ressenti'];
     const promotion = form.value['promotion'];
     const universite = form.value['universite'];
-    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion,universite);
+    this.stageService.addStage(nom, prenom, pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion,universite);
     this.router.navigate(['/stages']);
   }
 

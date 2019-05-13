@@ -6,6 +6,8 @@ export class StageService {
     private stages = [
         {
             id: 1,
+            nom: 'Bouysse',
+            prenom: 'Antoine',
             pays: 'France',
             depart: new Date(),
             fin: new Date,
@@ -21,6 +23,8 @@ export class StageService {
         },
         {
             id: 2,
+            nom: 'Bouysse',
+            prenom: 'Antoine',
             pays: 'Canada',
             depart: new Date(),
             fin: new Date,
@@ -36,6 +40,8 @@ export class StageService {
         },
         {
             id: 3,
+            nom: 'Bouysse',
+            prenom: 'Antoine',
             pays: 'Togo',
             depart: new Date(),
             fin: new Date,
@@ -51,6 +57,8 @@ export class StageService {
         },
         {
             id: 2,
+            nom: 'Bouysse',
+            prenom: 'Antoine',
             pays: 'Canada',
             depart: new Date(),
             fin: new Date,
@@ -66,6 +74,8 @@ export class StageService {
         },
         {
             id: 2,
+            nom: 'Bouysse',
+            prenom: 'Antoine',
             pays: 'Chine',
             depart: new Date(),
             fin: new Date,
@@ -82,9 +92,11 @@ export class StageService {
 
     ];
     
-    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string,satisfaction_enseignement: string,satisfaction_vie: string,reussite: string,ressenti: string, promotion: string,universite:string) {
+    addStage(nom: string, prenom: string,pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string,satisfaction_enseignement: string,satisfaction_vie: string,reussite: string,ressenti: string, promotion: string,universite:string) {
       const stageObject = {
         id: 0,
+        nom: '',
+        prenom: '',
         pays: '',
         depart: new Date,
         fin: new Date,
@@ -98,6 +110,8 @@ export class StageService {
         promotion: '',
         universite: ''
       };
+        stageObject.nom = nom;
+        stageObject.prenom = prenom;
         stageObject.pays = pays;
         stageObject.depart = depart;
         stageObject.fin = fin;
