@@ -15,7 +15,7 @@
     <div class="choix">
       <select [(ngModel)]="pays">
         <option value='tous'>Tous</option>
-        <option *ngFor="let stage of stages" value="{{stage.pays}}">{{stage.pays}}</option>
+        <option *ngFor="let pays of listePays" value="{{pays}}">{{pays}}</option>
       </select>
     </div>
   </div>
@@ -26,12 +26,11 @@
     <div class="choix">
       <select [(ngModel)]="promotion">
         <option value='tous'>Tous</option>
-        <option *ngFor="let stage of stages" value="{{stage.promotion}}">{{stage.promotion}}</option>
+        <option *ngFor="let promo of listePromo" value="{{promo}}">{{promo}}</option>
       </select>
     </div>
   </div>
 </div>
-
 
 <div class="box">
   <div class="elem">
@@ -55,7 +54,7 @@
       Satisfaction moyenne de l'enseignement:
     </div>
     <div class="choix">
-      {{getStatisfactionEnseign()}} / 5
+      {{getSatisfactionEnseign()}} / 5
     </div>
   </div>
   <div class="elem">
@@ -63,7 +62,7 @@
       Satisfaction moyenne de la vie:
     </div>
     <div class="choix">
-      {{getStatisfactionVie()}} / 5
+      {{getSatisfactionVie()}} / 5
     </div>
   </div>
   <div class="elem">
@@ -71,7 +70,7 @@
       Satisfaction moyenne du pays:
     </div>
     <div class="choix">
-      {{getStatisfactionPays()}} / 5
+      {{getSatisfactionPays()}} / 5
     </div>
   </div>
 
