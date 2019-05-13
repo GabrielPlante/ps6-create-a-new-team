@@ -109,7 +109,7 @@ export class StatistiquesComponent implements OnInit {
     if (i === 0){
       return '0 résultats';
     }
-    return reussite/i;
+    return Math.round(reussite/i*100)/100;
   }
   getSatisfactionEnseign() {
     var i = 0;
@@ -123,7 +123,7 @@ export class StatistiquesComponent implements OnInit {
     if (i === 0){
       return '0 résultats';
     }
-    return satisfaction/i;
+    return Math.round(satisfaction/i*100)/100;
   }
   getSatisfactionPays() {
     var i = 0;
@@ -137,7 +137,7 @@ export class StatistiquesComponent implements OnInit {
     if (i === 0){
       return '0 résultats';
     }
-    return satisfaction/i;
+    return Math.round(satisfaction/i*100)/100;
   }
  getSatisfactionVie() {
     var i = 0;
@@ -151,7 +151,7 @@ export class StatistiquesComponent implements OnInit {
     if (i === 0){
       return '0 résultats';
     }
-    return satisfaction/i;
+    return Math.round(satisfaction/i*100)/100;
   }
 
   getNbr(){
