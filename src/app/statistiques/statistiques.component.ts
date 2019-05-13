@@ -48,8 +48,8 @@ export class StatistiquesComponent implements OnInit {
     this.refreshPromo();
     this.refreshStage();
   }
-  addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string, satisfaction_enseignement: string, satisfaction_vie: string,reussite: string,ressenti: string, promotion: string,universite:string) {
-    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion,universite);
+  addStage(nom: string, prenom: string,pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string, satisfaction_enseignement: string, satisfaction_vie: string,reussite: string,ressenti: string, promotion: string,universite:string) {
+    this.stageService.addStage(nom,prenom,pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion,universite);
   }
 
   refreshStage(){
