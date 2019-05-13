@@ -16,7 +16,8 @@ export class StageService {
             satisfaction_vie: '2',
             reussite: 'Oui',
             ressenti: 'c t bien',
-            promotion: 'SI3'
+            promotion: 'SI3',
+            universite: 'Université'
         },
         {
             id: 2,
@@ -30,7 +31,8 @@ export class StageService {
             satisfaction_vie: '4',
             reussite: 'Oui',
             ressenti: 'Montreal est une très belle ville, les gens sont très acceuillants, et le pays est très chaleureux. On peux très facilement aller faire du ski à 1h de voiture. Je suis allé voir les chutes du Niagara, c est très beau, je suis aussi allé faire un road trip pendant 5 jours ! Par contre le billet est assez cher et la vie y est plus onéreuse qu en france.',
-            promotion: 'SI3'
+            promotion: 'SI3',
+            universite: 'Université'
         },
         {
             id: 3,
@@ -44,7 +46,8 @@ export class StageService {
             satisfaction_vie: '1',
             reussite: 'Oui',
             ressenti: 'C T NUL',
-            promotion: 'MAM4'
+            promotion: 'MAM4',
+            universite: 'Université'
         },
         {
             id: 2,
@@ -58,7 +61,8 @@ export class StageService {
             satisfaction_vie: '3',
             reussite: 'Non',
             ressenti: 'beau froid et raté',
-            promotion: 'ELEC4'
+            promotion: 'ELEC4',
+            universite: 'Université'
         },
         {
             id: 2,
@@ -72,12 +76,13 @@ export class StageService {
             satisfaction_vie: '3',
             reussite: 'Non',
             ressenti: 'Ching chong',
-            promotion: 'SI4'
+            promotion: 'SI4',
+            universite: 'Université'
         },
 
     ];
     
-    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string,satisfaction_enseignement: string,satisfaction_vie: string,reussite: string,ressenti: string, promotion: string) {
+    addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string,satisfaction_enseignement: string,satisfaction_vie: string,reussite: string,ressenti: string, promotion: string,universite:string) {
       const stageObject = {
         id: 0,
         pays: '',
@@ -90,7 +95,8 @@ export class StageService {
         satisfaction_vie: '',
         reussite: '',
         ressenti: '',
-        promotion: ''
+        promotion: '',
+        universite: ''
       };
         stageObject.pays = pays;
         stageObject.depart = depart;
@@ -104,6 +110,7 @@ export class StageService {
         stageObject.ressenti = ressenti;
         stageObject.id = this.stages[(this.stages.length - 1)].id + 1;
         stageObject.promotion = promotion;
+        stageObject.universite= universite;
         this.stages.push(stageObject);
         this.emitStageSubject();
         console.log(this.stages)
