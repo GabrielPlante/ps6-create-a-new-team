@@ -46,7 +46,7 @@
       Taux de réussite moyen:
     </div>
     <div class="choix">
-      {{getReussite()}} / 1
+      {{getReussitePerc()}} / 1
     </div>
   </div>
   <div class="elem">
@@ -75,3 +75,87 @@
   </div>
 
 </div>
+
+        <table class="table table-hover">
+            <thead class="mdb-color lighten-4">
+              <tr>
+                <th>
+                    Pays
+                </th>
+                <th>
+                    Date de départ
+                </th>
+                <th>
+                    Date de fin
+                </th> 
+                <th>
+                    Type de mobilité
+                </th> 
+                <th>
+                    Ville
+                </th>
+                <th>
+                    Université/Entreprise
+                </th> 
+                <th>
+                    Promotion
+                </th> 
+                <th>
+                    Satisfaction du pays et de la ville
+                </th>
+                <th>
+                    Satisfaction de l'enseignement
+                </th>
+                <th>
+                    Satisfaction de la vie étudiante/en entreprise
+                </th>
+                <th>
+                    Réussite
+                </th> 
+                <th>
+                    Ressenti
+                </th>    
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let stage of listeStage; let i = index; trackBy: refreshStage()">
+                <td>
+                    {{stage.pays}}
+                </td>
+                <td>
+                    {{stage.depart | date}}
+                </td>
+                <td>
+                    {{stage.fin | date}}
+                </td> 
+                <td>
+                    {{stage.type_mobilite}}
+                </td> 
+                <td>
+                    {{stage.ville}}
+                </td>
+                <td>
+                    {{stage.universite}}
+                </td>
+                <td>
+                    {{stage.promotion}}
+                </td> 
+                <td>
+                    {{stage.satisfaction_pays}}
+                </td>
+                <td>
+                    {{stage.satisfaction_enseignement}}
+                </td>
+                <td>
+                    {{stage.satisfaction_vie}}
+                </td>
+                <td>
+                    {{stage.reussite}}
+                </td>  
+                <td>
+                    {{stage.ressenti}}
+                </td>   
+              </tr>
+            </tbody>
+          </table>
+      

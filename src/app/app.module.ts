@@ -21,10 +21,8 @@ import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserService } from './services/user.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { NewUserComponent } from './new-user/new-user.component';
-import { StagesComponent } from './stages/stages.component';
 import { PartagerComponent } from './partager/partager.component';
 import { StageService } from './services/stage.service';
-import { StageViewComponent } from './stage-view/stage-view.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 
 
@@ -37,7 +35,6 @@ const appRoutes: Routes = [
   { path: '', component: AuthComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: 'users', component: UserListComponent },
-  { path: 'stages', component: StageViewComponent },
   { path: 'statistiques', component: StatistiquesComponent },
   { path: 'partager', component: PartagerComponent },
   { path: 'new-user', component: NewUserComponent },
@@ -66,10 +63,6 @@ const appRoutes: Routes = [
     NewUserComponent,
 
     PartagerComponent,
-
-    StagesComponent,
-
-    StageViewComponent,
 
     StatistiquesComponent
   ],
