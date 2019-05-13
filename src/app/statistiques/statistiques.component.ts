@@ -48,13 +48,13 @@ export class StatistiquesComponent implements OnInit {
     }
     return reussite/i;
   }
-  getStatisfaction() {
+  getStatisfactionEnseign() {
     var i = 0;
     var satisfaction = 0;
     this.stages.forEach(stage => {
       if((this.pays === 'tous' || this.pays === stage.pays) && (this.promotion === 'tous' || this.promotion == stage.promotion) && this.type === stage.type_mobilite){
       i += 1;
-      satisfaction += parseInt(stage.satisfaction);
+      satisfaction += parseInt(stage.satisfaction_enseignement)||0;
     }
     });
     if (i === 0){
@@ -62,6 +62,35 @@ export class StatistiquesComponent implements OnInit {
     }
     return satisfaction/i;
   }
+  getStatisfactionPays() {
+    var i = 0;
+    var satisfaction = 0;
+    this.stages.forEach(stage => {
+      if((this.pays === 'tous' || this.pays === stage.pays) && (this.promotion === 'tous' || this.promotion == stage.promotion) && this.type === stage.type_mobilite){
+      i += 1;
+      satisfaction += parseInt(stage.satisfaction_pays)||0;
+    }
+    });
+    if (i === 0){
+      return '0 résultats';
+    }
+    return satisfaction/i;
+  }
+ getStatisfactionVie() {
+    var i = 0;
+    var satisfaction = 0;
+    this.stages.forEach(stage => {
+      if((this.pays === 'tous' || this.pays === stage.pays) && (this.promotion === 'tous' || this.promotion == stage.promotion) && this.type === stage.type_mobilite){
+      i += 1;
+      satisfaction += parseInt(stage.satisfaction_vie)||0;
+    }
+    });
+    if (i === 0){
+      return '0 résultats';
+    }
+    return satisfaction/i;
+  }
+
   getNbr(){
     var i = 0;
     this.stages.forEach(stage => {

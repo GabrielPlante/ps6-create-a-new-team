@@ -36,6 +36,14 @@
 <div class="box">
   <div class="elem">
     <div class="desc">
+      Nombre de résultat:
+    </div>
+    <div class="choix">
+      {{getNbr()}}
+    </div>
+  </div>
+  <div class="elem">
+    <div class="desc">
       Taux de réussite moyen:
     </div>
     <div class="choix">
@@ -44,18 +52,27 @@
   </div>
   <div class="elem">
     <div class="desc">
-      Satisfaction moyenne:
+      Satisfaction moyenne de l'enseignement:
     </div>
     <div class="choix">
-      {{getStatisfaction()}} / 5
+      {{getStatisfactionEnseign()}} / 5
     </div>
   </div>
   <div class="elem">
     <div class="desc">
-      Nombre de résultat:
+      Satisfaction moyenne de la vie:
     </div>
     <div class="choix">
-      {{getNbr()}}
+      {{getStatisfactionVie()}} / 5
     </div>
   </div>
+  <div class="elem">
+    <div class="desc">
+      Satisfaction moyenne du pays:
+    </div>
+    <div class="choix">
+      {{getStatisfactionPays()}} / 5
+    </div>
+  </div>
+
 </div>

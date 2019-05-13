@@ -24,6 +24,34 @@ export class StageService {
             depart: new Date(),
             fin: new Date,
             type_mobilite: 'Stage',
+            ville: 'Montreal',
+            satisfaction_pays: '5',
+            satisfaction_enseignement: '4',
+            satisfaction_vie: '4',
+            reussite: 'Oui',
+            ressenti: 'Montreal est une très belle ville, les gens sont très acceuillants, et le pays est très chaleureux. On peux très facilement aller faire du ski à 1h de voiture. Je suis allé voir les chutes du Niagara, c est très beau, je suis aussi allé faire un road trip pendant 5 jours ! Par contre le billet est assez cher et la vie y est plus onéreuse qu en france.',
+            promotion: 'SI3'
+        },
+        {
+            id: 3,
+            pays: 'Togo',
+            depart: new Date(),
+            fin: new Date,
+            type_mobilite: 'Semestre',
+            ville: 'Lomé',
+            satisfaction_pays: '2',
+            satisfaction_enseignement: '1',
+            satisfaction_vie: '1',
+            reussite: 'Oui',
+            ressenti: 'C T NUL',
+            promotion: 'MAM4'
+        },
+        {
+            id: 2,
+            pays: 'Canada',
+            depart: new Date(),
+            fin: new Date,
+            type_mobilite: 'Stage',
             ville: 'Vancouver',
             satisfaction_pays: '4',
             satisfaction_enseignement: '4',
@@ -31,6 +59,20 @@ export class StageService {
             reussite: 'Non',
             ressenti: 'beau froid et raté',
             promotion: 'ELEC4'
+        },
+        {
+            id: 2,
+            pays: 'Chine',
+            depart: new Date(),
+            fin: new Date,
+            type_mobilite: 'Semestre',
+            ville: 'Pekin',
+            satisfaction_pays: '4',
+            satisfaction_enseignement: '4',
+            satisfaction_vie: '3',
+            reussite: 'Non',
+            ressenti: 'Ching chong',
+            promotion: 'SI4'
         },
 
     ];
