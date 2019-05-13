@@ -1,14 +1,54 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+@Injectable({
+  providedIn: 'root'
+})
+/*
+export class IssueService {
+  uri = 'http://localhost:3000';
+  constructor(private http: HttpClient) {
+  }
+  addIssue(title, responsible, description, severity) {
+    const issue = {
+      title: title,
+      responsible: responsible,
+      description: description,
+      severity: severity
+    };
+    return this.http.post(`${this.uri}/issues/add`, issue);
+  }
+  getIssues() {
+    return this.http.get(`${this.uri}/issues`);
+  }
+  getIssueById(id) {
+    return this.http.get(`${this.uri}/issues/${id}`);
+  }
+  updateIssue(id, title, responsible, description, severity, status) {
+    const issue = {
+      title: title,
+      responsible: responsible,
+      description: description,
+      severity: severity,
+      status: status
+    };
+    return this.http.post(`${this.uri}/issues/update/${id}`, issue);
+  }
+  deleteIssue(id) {
+    return this.http.get(`${this.uri}/issues/delete/${id}`);
+  }
+}
+*/
 
 export class StageService {
-    private url='http://localhost:4000/semestres';
-    private http :HttpClient;
+    private url='http://localhost:3000/api/semestres';
     stagesSubject = new Subject<any[]>();
-    private stages;
-    
+    private stages = [];
+
+    //constructor(private http: HttpClient){
+    //}
+
     addStage(nom: string, prenom:string, pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string,satisfaction_enseignement: string,satisfaction_vie: string,reussite: string,ressenti: string, promotion: string,universite:string) {
       const stageObject = {
         prenom: '',
@@ -41,7 +81,7 @@ export class StageService {
       stageObject.promotion = promotion;
       stageObject.universite= universite;
       this.http.post(this.url,stageObject);
-      this.http.get(this.url).subscribe(evt => this.stages.add(evt));
+      this.http.get(this.url).subscribe(evt => this.stages.push(evt));
       this.emitStageSubject();
       console.log(this.stages)
       console.log(reussite,type_mobilite)
