@@ -14,9 +14,12 @@ export class StatistiquesComponent implements OnInit {
 
   stages: any[];
   stagesSubscription: Subscription;
+  listePays: string[];
+  listePromo: string[];
 
+  constructor(private stageService: StageService) {
+  }
 
-  constructor(private stageService: StageService) { }
 
   ngOnInit() {
     this.stagesSubscription = this.stageService.stagesSubject.subscribe(
@@ -28,10 +31,45 @@ export class StatistiquesComponent implements OnInit {
     this.promotion = 'tous';
     this.type = 'Stage';
     this.stageService.emitStageSubject();
+    this.listePays = [];
+    this.refreshPays();
+    this.listePromo = [];
+    this.refreshPromo();
   }
   addStage(pays: string,depart: Date,fin: Date,type_mobilite: string,ville: string,satisfaction_pays: string, satisfaction_enseignement: string, satisfaction_vie: string,reussite: string,ressenti: string, promotion: string) {
     this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion);
   }
+
+  refreshPays(){
+    for (var i = 0; i != this.stages.length; i++){
+      var ajouter = true;
+      for (var j = 0; j < i; j++){
+        if(this.stages[i].pays === this.stages[j].pays){
+          ajouter = false;
+          break;
+        }
+      }
+      if(ajouter){
+        this.listePays.push(this.stages[i].pays);
+      }
+    }
+  }
+
+  refreshPromo(){
+    for (var i = 0; i != this.stages.length; i++){
+      var ajouter = true;
+      for (var j = 0; j < i; j++){
+        if(this.stages[i].promotion === this.stages[j].promotion){
+          ajouter = false;
+          break;
+        }
+      }
+      if(ajouter){
+        this.listePromo.push(this.stages[i].promotion);
+      }
+    }
+  }
+
   getReussite() {
     var i = 0;
     var reussite = 0;
@@ -48,7 +86,7 @@ export class StatistiquesComponent implements OnInit {
     }
     return reussite/i;
   }
-  getStatisfactionEnseign() {
+  getSatisfactionEnseign() {
     var i = 0;
     var satisfaction = 0;
     this.stages.forEach(stage => {
@@ -62,7 +100,7 @@ export class StatistiquesComponent implements OnInit {
     }
     return satisfaction/i;
   }
-  getStatisfactionPays() {
+  getSatisfactionPays() {
     var i = 0;
     var satisfaction = 0;
     this.stages.forEach(stage => {
@@ -76,7 +114,7 @@ export class StatistiquesComponent implements OnInit {
     }
     return satisfaction/i;
   }
- getStatisfactionVie() {
+ getSatisfactionVie() {
     var i = 0;
     var satisfaction = 0;
     this.stages.forEach(stage => {
