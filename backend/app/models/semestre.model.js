@@ -4,19 +4,20 @@ const BaseModel = require('../utils/base-model.js');
 class SemestreModel extends BaseModel {
   constructor() {
     super('Semestre', {
-        firstname: Joi.string().required(),
-        lastname: Joi.string().required(),
-        group: Joi.string().required(),
-        country: Joi.string().required(),
-        city: Joi.string().required(),
-        university: Joi.string().required(),
-        start: Joi.string().required(),
-        end: Joi.string().required(),
-        citySatisfaction: Joi.number().integer().required().min(0).max(5),
-        schoolSatisfaction: Joi.number().integer().required().min(0).max(5),
-        studentLifeSatisfaction: Joi.number().integer().required().min(0).max(5),
-        overallSatisfaction: Joi.number().integer().required().min(0).max(5),
-        comment: Joi.string(),
+        nom: Joi.string().required(),
+        prenom: Joi.string().required(),
+        pays: Joi.string().required(),
+        depart: Joi.string().required(),
+        fin: Joi.string().required(),
+        type_mobilite: Joi.boolean().required(),
+        ville: Joi.string().required(),
+        satisfaction_pays: Joi.number().integer().required().min(0).max(5),
+        satisfaction_enseignement: Joi.number().integer().required().min(0).max(5),
+        satisfaction_vie: Joi.number().integer().required().min(0).max(5),
+        reussite: Joi.boolean().required(),
+        ressenti: Joi.string().required(),
+        promotion: Joi.string().required(),
+        universite: Joi.string().required()
     });
   }
 }
