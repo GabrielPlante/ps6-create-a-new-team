@@ -30,7 +30,8 @@ export class PartagerComponent implements OnInit {
     const reussite = form.value['reussite'];
     const ressenti = form.value['ressenti'];
     const promotion = form.value['promotion'];
-    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion);
+    const universite = form.value['universite'];
+    this.stageService.addStage(pays,depart,fin,type_mobilite,ville,satisfaction_pays,satisfaction_enseignement, satisfaction_vie ,reussite,ressenti,promotion,universite);
     this.router.navigate(['/stages']);
   }
 
