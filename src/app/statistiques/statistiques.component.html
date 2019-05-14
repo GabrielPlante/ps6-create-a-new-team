@@ -4,8 +4,8 @@
       Type:
     </div>
     <div class="choix">
-      <input type="radio" [(ngModel)]="type" value="Stage">Stage
-      <input type="radio" [(ngModel)]="type" value="Semestre">Semestre
+      <input type="radio" [(ngModel)]="type" value="Stage"> Stage
+      <input type="radio" [(ngModel)]="type" value="Semestre"> Semestre
     </div>
   </div>
   <div class="elem">
@@ -30,6 +30,15 @@
       </select>
     </div>
   </div>
+  <div class="elem">
+    <div class="desc">
+      Etudiant:
+    </div>
+    <div class="choix">
+      <input type="text" name="nom" [(ngModel)]="nom" />
+    </div>
+  </div>
+
 </div>
 
 <div class="box">
@@ -120,6 +129,9 @@
                 </th> 
                 <th>
                     Ressenti
+                </th> 
+                <th>
+                    Contrat d'études
                 </th>    
               </tr>
             </thead>
@@ -166,7 +178,10 @@
                 </td>  
                 <td>
                     {{stage.ressenti}}
-                </td>   
+                </td>  
+                <td>
+                    <a>contrat.pdf</a>
+                </td>  
               </tr>
             </tbody>
           </table>
