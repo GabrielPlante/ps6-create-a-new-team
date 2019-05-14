@@ -8,8 +8,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./statistiques.component.scss']
 })
 export class StatistiquesComponent implements OnInit {
-  @Input() prenom: String;
-  @Input() nom: String;
+  @Input() prenom: string;
+  @Input() nom: string;
   @Input() pays: string;
   @Input() promotion: string;
   @Input() type: string;
@@ -43,6 +43,7 @@ export class StatistiquesComponent implements OnInit {
     this.pays = 'tous';
     this.promotion = 'tous';
     this.type = 'Stage';
+    this.nom = "";
     this.stageService.emitStageSubject();
     this.listePays = [];
     this.refreshPays();
@@ -57,7 +58,8 @@ export class StatistiquesComponent implements OnInit {
   refreshStage(){
     this.listeStage = [];
     this.stages.forEach(stage => {
-      if((this.pays === 'tous' || this.pays === stage.pays) && (this.promotion === 'tous' || this.promotion == stage.promotion) && this.type === stage.type_mobilite){
+      if((this.pays === 'tous' || this.pays === stage.pays) && (this.promotion === 'tous' || this.promotion == stage.promotion) && this.type === stage.type_mobilite 
+      && (this.nom === "" || this.nom === stage.nom)){
         this.listeStage.push(stage);
       }
     });

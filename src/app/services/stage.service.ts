@@ -23,7 +23,7 @@ export class StageService {
         },
         {
             id: 2,
-            nom: 'Bouysse',
+            nom: 'Plante',
             prenom: 'Antoine',
             pays: 'Canada',
             depart: new Date(),
