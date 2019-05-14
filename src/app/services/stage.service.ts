@@ -34,7 +34,7 @@ export class StageService {
             satisfaction_enseignement: '4',
             satisfaction_vie: '4',
             reussite: 'Oui',
-            ressenti: 'Montreal est une très belle ville, les gens sont très acceuillants, et le pays est très chaleureux. On peux très facilement aller faire du ski à 1h de voiture. Je suis allé voir les chutes du Niagara, c est très beau, je suis aussi allé faire un road trip pendant 5 jours ! Par contre le billet est assez cher et la vie y est plus onéreuse qu en france.',
+            ressenti: 'Montreal est une très belle ville, les gens sont très acceuillants',
             promotion: 'SI3',
             universite: 'Université'
         },
