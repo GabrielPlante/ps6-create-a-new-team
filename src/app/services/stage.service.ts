@@ -8,18 +8,18 @@ export class StageService {
             id: 1,
             nom: 'Bouysse',
             prenom: 'Antoine',
-            pays: 'France',
+            pays: 'Allemagne',
             depart: new Date(),
             fin: new Date,
             type_mobilite: 'Stage',
-            ville: 'Arnas',
+            ville: 'Munich',
             satisfaction_pays: '3',
             satisfaction_enseignement: '4',
             satisfaction_vie: '2',
             reussite: 'Oui',
-            ressenti: 'Bonne ambiance au sein de l\'école',
+            ressenti: 'Bonne ambiance au sein de l\'entreprise',
             promotion: 'SI3',
-            universite: 'Université'
+            universite: 'Amazon'
         },
         {
             id: 2,
@@ -36,7 +36,7 @@ export class StageService {
             reussite: 'Oui',
             ressenti: 'Montreal est une très belle ville, les gens sont très acceuillants.',
             promotion: 'SI3',
-            universite: 'Université'
+            universite: 'Apple'
         },
         {
             id: 3,
@@ -70,7 +70,7 @@ export class StageService {
             reussite: 'Non',
             ressenti: 'beau froid et raté',
             promotion: 'ELEC4',
-            universite: 'Université'
+            universite: 'Uber'
         },
         {
             id: 2,
@@ -138,7 +138,7 @@ export class StageService {
       reussite: 'Non',
       ressenti: 'Séjour très enrichissant, culture très surprenante aux premiers abords.',
       promotion: 'MAM4',
-      universite: 'Université'
+      universite: 'Starbuck'
   },
   {
     id: 2,
@@ -189,13 +189,13 @@ export class StageService {
   reussite: 'Oui',
   ressenti: 'très bonne bière et acceuil très chaleureux!',
   promotion: 'ELEC5',
-  universite: 'Entreprise'
+  universite: 'Arcelor Mittal'
 },
 {
   id: 2,
   nom: 'Sam',
   prenom: 'Sam',
-  pays: 'italie',
+  pays: 'Italie',
   depart: new Date(),
   fin: new Date,
   type_mobilite: 'Stage',
@@ -204,9 +204,9 @@ export class StageService {
   satisfaction_enseignement: '3',
   satisfaction_vie: '5',
   reussite: 'Oui',
-  ressenti: 'Pays surprenant de par sa diversité de culture.s',
+  ressenti: 'Pays surprenant de par sa diversité de cultures.',
   promotion: 'SI4',
-  universite: 'Entreprise'
+  universite: 'Entreprise a'
 },
 {
   id: 2,
